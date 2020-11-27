@@ -436,16 +436,87 @@ aside .ds-logo {
 .home .display {
   position: relative;
 }
-.home .display h1 {
-  color: var(--white-color);
+.link {
+  margin-left: 10px;
+  position: relative;
+  font-size: 5em;
+  line-height: 1;
+  display: inline-block;
   text-transform: uppercase;
-  font-weight: 500;
-  transform: scale(1.1);
-  margin-bottom: 10px;
+}
+.link--mallki {
+  font-weight: 800;
+  color: var(--light-grey);
+  -webkit-transition: color 0.5s 0.25s;
+  transition: color 0.5s 0.25s;
+  overflow: hidden;
+}
+.link--mallki:hover {
+  -webkit-transition: none;
+  transition: none;
+  color: transparent;
+}
+.link--mallki::before {
+  content: "";
+  width: 60%;
+  height: 10px;
+  margin: 0;
+  background: var(--green-color);
+  position: absolute;
+  left: -1px;
+  top: 50%;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+}
+.link--mallki:hover::before {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.link--mallki span {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+.link--mallki span::before {
+  content: attr(data-letters);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+.link--mallki span:nth-child(2) {
+  top: 50%;
+}
+.link--mallki span:first-child::before {
+  top: 0;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.link--mallki span:nth-child(2)::before {
+  bottom: 0;
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+.link--mallki:hover span::before {
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 .home .wrapper-txt {
   position: absolute;
-  margin-top: 70px;
+  margin-top: 170px;
 }
 .home h4 {
   font-size: 14px;
@@ -611,6 +682,10 @@ aside .ds-logo {
   }
   .txt-menu--content p {
     transform: rotate(-90deg);
+  }
+  .link {
+    margin-left: 0;
+    font-size: 8em;
   }
   .home .wrapper-txt {
     position: absolute;
