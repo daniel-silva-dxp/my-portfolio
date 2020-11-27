@@ -435,6 +435,7 @@ aside .ds-logo {
 }
 .home .display {
   position: relative;
+  overflow: hidden;
 }
 .link {
   margin-left: 10px;
