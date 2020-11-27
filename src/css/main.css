@@ -1,43 +1,43 @@
 /*------------------------------------------------------------------
 [Comments table]
 
-1. Variables
-2. General style
-    2.1 Typography
-    2.2 Specials Classes
-3. Aside
-    3.1 Burger Button
-    3.2 Fullscreen Menu
-4. Pages Style
-5. Home Slider
-    5.1 Slider Navigation Buttons
-    5.2 Slider Inner Info
-    5.3 Slide Home
-    5.4 Slide About
-    5.5 Slide Cases
-    5.6 Slide Contact
-    5.7 Pagination
-6. Cases
-7. About
-8. Contact
-10. Responsive Rules
-11. Preloader
-12. Animations
-13. Scroll Bar
+1. VARIABLES
+2. GENERAL STYLE
+    2.1 TYPOGRAPHY
+    2.2 SPECIAL CLASSES
+    2.3 FLEXBOX CLASSES
+3. ASIDE
+    3.1 BURGER BUTTON
+    3.2 FULLSCREEN MENU
+4. HOME 
+5. ABOUT ME
+6. CASES
+7. CONTACT
+8. PRELOADER
+9. RESPONSIVE RULES
+10. ANIMATIONS
+11. SCROLL BAR
+12. LINES PAGE DIVIDER
 ------------------------------------------------------------------*/
 
 /**
- * 1. Variables
+ * 1. VARIABLES
  */
 :root {
   --green-color: #6cff6c;
   --light-grey: #7d7d88;
   --dark-grey: #19191f;
   --white-color: #fff;
+  --underline-intrinsic-width: 8;
+  --underline-width: 12;
+  --underline-color: var(--green-color);
+  --underline-cap-width: 4px;
+  --underline-offset-y: -2px;
+  --underline-padding-x: 0.12em;
 }
 
 /**
- * 2. General style
+ * 2. GENERAL STYLE
  */
 ::selection {
   background: var(--light-grey);
@@ -102,7 +102,7 @@ ul {
 }
 
 /**
- * 2.1 Typography
+ * 2.1 TYPOGRAPHY
  */
 h1,
 h2,
@@ -127,7 +127,7 @@ p {
 }
 
 /**
- * 2.2 Specials Classesy
+ * 2.2 SPECIAL CLASSES
  */
 .container {
   width: 100%;
@@ -174,7 +174,7 @@ p {
 }
 
 /*
-* 2.3 Flexbox Class
+* 2.3 FLEXBOX CLASSES
 */
 .flex-container {
   display: flex;
@@ -206,15 +206,20 @@ p {
 }
 
 /*
-* 3 Aside
+* 3 ASIDE
 */
 aside {
   position: fixed;
+  width: 100%;
+  z-index: 30;
+}
+aside .sidebar {
+  position: fixed;
+  width: 100%;
+  height: 80px;
   top: 0;
   background-color: var(--green-color);
-  height: 80px;
   position: relative;
-  z-index: 30;
 }
 aside .ds-logo {
   width: 80px;
@@ -235,7 +240,7 @@ aside .ds-logo {
 }
 
 /**
- * 3.1 Burger Button
+ * 3.1 BURGER BUTTON
  */
 .ds-nav--content {
   width: 80px;
@@ -299,7 +304,7 @@ aside .ds-logo {
 }
 
 /**
- * 3.1 Fullscreen Menu
+ * 3.2 FULLSCREEN MENU
  */
 
 .float-nav {
@@ -413,7 +418,77 @@ aside .ds-logo {
 }
 
 /*
-* 11. Preloader
+* 4. HOME
+*/
+.home {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--dark-grey);
+  position: relative;
+}
+.home img {
+  position: absolute;
+  left: 0;
+}
+.home .display {
+  position: relative;
+}
+.home .display h1 {
+  color: var(--white-color);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.home .wrapper-txt {
+  position: absolute;
+  right: 10px;
+  writing-mode: vertical-lr;
+}
+.home h4 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white-color);
+  letter-spacing: 0.2em;
+  position: relative;
+}
+.home h4::before {
+  content: "";
+  width: 2px;
+  height: 20%;
+  background-color: var(--green-color);
+  position: absolute;
+  top: -5px;
+  left: -2px;
+}
+.type-writer-text {
+  transform: translate(-10%, -10%);
+  border-right: 1px solid rgba(125, 125, 136, 0.1);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 5s steps(40) 1.5s 1 normal both,
+    cursorblink 0.5s infinite;
+}
+.scroll {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+}
+/*
+* 5. ABOUT ME
+*/
+
+/*
+* 6. CASES
+*/
+
+/*
+* 7. CONTACT
+*/
+
+/*
+* 8. PRELOADER
 */
 .preloader {
   position: fixed;
@@ -467,7 +542,89 @@ aside .ds-logo {
 }
 
 /*
-* 12. Animations
+* 9. RESPONSIVE RULES
+*/
+@media screen and (min-width: 576px) {
+  .home .murkup-line {
+    margin-top: -4.2%;
+  }
+}
+@media screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 992px) {
+  .tags {
+    left: 90px;
+  }
+  h1 {
+    font-size: calc(80px + 1vw);
+  }
+  h2 {
+    font-size: calc(36px + 16 * (100vw - 992px) / 1508);
+  }
+  h3 {
+    font-size: calc(28px + 16 * (100vw - 992px) / 1508);
+    margin-bottom: 20px;
+  }
+  h4 {
+    font-size: calc(24px + 16 * (100vw - 992px) / 1508);
+    font-weight: 300;
+  }
+  h5 {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  h6 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: calc(10px + 10 * (100vw - 992px) / 1508);
+  }
+  p {
+    font-size: calc(14px + 2 * (100vw - 992px) / 1508);
+    line-height: 1.8;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  aside {
+    width: 80px;
+    left: 0;
+    bottom: 0;
+  }
+  aside .sidebar {
+    width: 80px;
+    height: 100vh;
+    margin: 0 !important;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  aside .ds-logo {
+    margin-left: 0;
+  }
+  .txt-menu--content p {
+    transform: rotate(-90deg);
+  }
+  .home .wrapper-txt {
+    right: 80px;
+    writing-mode: vertical-lr;
+  }
+}
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1364px) {
+}
+
+@media screen and (min-width: 1600px) {
+}
+
+/*
+* 10. ANIMATIONS
 */
 
 @-moz-keyframes loading-bar {
@@ -546,8 +703,27 @@ aside .ds-logo {
     transform: rotate(360deg);
   }
 }
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 12.5em;
+  }
+}
+@keyframes cursorblink {
+  from {
+    border-right: 1px solid #dedede;
+  }
+
+  to {
+    border-right: 1px solid #666;
+  }
+}
+
 /*
-* 13. Scroll Bar
+* 11. SCROLL BAR
 */
 ::-webkit-scrollbar {
   width: 7px !important;
@@ -563,7 +739,7 @@ aside .ds-logo {
 }
 
 /*
-* 14. Lines page divider
+* 12. LINES PAGE DIVIDER
 */
 .lines {
   position: fixed;
@@ -588,11 +764,6 @@ aside .ds-logo {
 .lines.finish .line-col:before {
   height: 100%;
 }
-.lines .line-col:nth-child(1):before {
-  -o-transition-delay: 2.9s;
-  -webkit-transition-delay: 2.9s;
-  transition-delay: 2.9s;
-}
 .lines .line-col:first-child:before {
   background: 0 0;
 }
@@ -603,74 +774,5 @@ aside .ds-logo {
   top: 0;
   width: 1px;
   height: 0%;
-  background: rgba(125, 125, 136, 0.05);
-}
-
-/*
-* 13. Responsive Rules
-*/
-@media screen and (min-width: 576px) {
-}
-@media screen and (min-width: 768px) {
-}
-@media only screen and (min-width: 992px) {
-  .tags {
-    left: 90px;
-  }
-  h1 {
-    font-size: calc(80px + 1vw);
-  }
-  h2 {
-    font-size: calc(36px + 16 * (100vw - 992px) / 1508);
-  }
-  h3 {
-    font-size: calc(28px + 16 * (100vw - 992px) / 1508);
-    margin-bottom: 20px;
-  }
-  h4 {
-    font-size: calc(24px + 16 * (100vw - 992px) / 1508);
-    font-weight: 300;
-  }
-  h5 {
-    font-size: 20px;
-    font-weight: 400;
-  }
-  h6 {
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: calc(10px + 10 * (100vw - 992px) / 1508);
-  }
-  p {
-    font-size: calc(14px + 2 * (100vw - 992px) / 1508);
-    line-height: 1.8;
-    font-family: "Roboto Mono", monospace;
-    font-weight: 500;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  aside {
-    width: 80px;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-  aside .ds-logo {
-    margin-left: 0;
-  }
-  .txt-menu--content p {
-    transform: rotate(-90deg);
-  }
-}
-@media screen and (min-width: 1200px) {
-}
-
-@media screen and (min-width: 1364px) {
-}
-
-@media screen and (min-width: 1600px) {
+  background: rgba(125, 125, 136, 0.1);
 }

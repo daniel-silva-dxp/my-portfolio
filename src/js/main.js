@@ -2,6 +2,7 @@
   "use strict";
   // All Funtions
   Fullscreen();
+  Slide();
   preloader(true, "black", "green");
 })(window);
 
@@ -78,5 +79,45 @@ function preloader(immune, background, color) {
     setTimeout(function () {
       $(".preloader").remove();
     }, 2000);
+  });
+}
+
+function Slide() {
+  var lastUpdate = new Date();
+  window.addEventListener("wheel", function (e) {
+    var thisUpdate = new Date();
+    if (thisUpdate - lastUpdate < 750) {
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
+    lastUpdate = thisUpdate;
+
+    var numBlocks = $("[data-slide]").length,
+      $curBlock = $("[data-slide].active"),
+      curBlockNum = $curBlock.data("slide");
+
+    var delta = e.deltaY;
+    if (delta < 0) {
+      //scroll up
+
+      if (curBlockNum != 1) {
+        var $prevBlock = $curBlock.prev(),
+          prevBlockNum = $prevBlock.data("slide");
+
+        $curBlock.removeClass("active prev-slide").addClass("next-slide");
+        $prevBlock.addClass("active").removeClass("prev-slide next-slide");
+      }
+    } else if (delta > 0) {
+      //scroll down
+
+      if (curBlockNum < numBlocks) {
+        var $nextBlock = $curBlock.next(),
+          nextEffect = $nextBlock.data("effect");
+
+        $curBlock.removeClass("active next-slide").addClass("prev-slide");
+        $nextBlock.addClass("active").removeClass("prev-slide next-slide");
+      }
+    }
   });
 }
