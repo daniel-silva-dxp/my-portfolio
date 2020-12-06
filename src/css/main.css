@@ -407,6 +407,17 @@ header .ds-logo {
   background-attachment: fixed;
   position: relative;
 }
+.home-overlay {
+  background-color: rgba(29, 29, 29, 0.9);
+  background-image: url("/src/img/png/others/pattern.png");
+  background-repeat: repeat;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
 .home .bg-color {
   position: absolute;
   background-color: var(--dark-grey);
@@ -414,7 +425,7 @@ header .ds-logo {
   right: 0;
   bottom: 0;
   left: 0;
-  opacity: 0.95;
+  opacity: 0.9;
 }
 .home h4 {
   font-size: 14px;
