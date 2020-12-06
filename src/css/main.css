@@ -480,10 +480,10 @@ header .ds-logo {
   opacity: 0;
 }
 .home .display h1:hover span:nth-child(2) hide {
-  padding-left: 20px;
+  padding-left: 10px;
 }
 .home .display h1:hover span:nth-child(3) hide {
-  padding-right: 20px;
+  padding-right: 10px;
 }
 .home .display h4 {
   margin-top: 20px;
@@ -594,6 +594,12 @@ header .ds-logo {
   */
   .home .display h1 {
     font-size: 73px;
+  }
+  .home .display h1:hover span:nth-child(2) hide {
+    padding-left: 40px;
+  }
+  .home .display h1:hover span:nth-child(3) hide {
+    padding-right: 40px;
   }
   /*
   * 12. LINES PAGE DIVIDER
