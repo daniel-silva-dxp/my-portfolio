@@ -6,7 +6,7 @@
     2.1 TYPOGRAPHY
     2.2 SPECIAL CLASSES
     2.3 FLEXBOX CLASSES
-3. ASIDE
+3. HEADE
     3.1 BURGER BUTTON
     3.2 FULLSCREEN MENU
 4. HOME 
@@ -26,14 +26,8 @@
 :root {
   --green-color: #6cff6c;
   --light-grey: #7d7d88;
-  --dark-grey: #19191f;
+  --dark-grey: #1d1d1d;
   --white-color: #fff;
-  --underline-intrinsic-width: 8;
-  --underline-width: 12;
-  --underline-color: var(--green-color);
-  --underline-cap-width: 4px;
-  --underline-offset-y: -2px;
-  --underline-padding-x: 0.12em;
 }
 
 /**
@@ -164,7 +158,7 @@ p {
   position: fixed;
   bottom: 0;
   left: 10px;
-  font-size: 18px;
+  font-size: 14px;
   font-family: "La Belle Aurore", cursive;
   z-index: 800;
 }
@@ -209,53 +203,34 @@ p {
 }
 
 /*
-* 3 ASIDE
+* 3 HEADER
 */
-aside {
+header .ds-logo {
   position: fixed;
-  width: 100%;
-  z-index: 30;
-}
-aside .sidebar {
-  position: fixed;
-  width: 100%;
+  width: 80px;
   height: 80px;
   top: 0;
-  background-color: var(--green-color);
-  position: relative;
-}
-aside .ds-logo {
-  width: 80px;
-  height: 80px;
-  margin-left: 5px;
-}
-.ds-nav--content {
-  margin: 0 auto;
-}
-.txt-menu--content {
-  width: 80px;
-  height: 80px;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.txt-menu--content p {
-  color: var(--white-color);
+  left: 15px;
+  z-index: 100;
 }
 
 /**
  * 3.1 BURGER BUTTON
  */
 .ds-nav--content {
-  width: 80px;
-  height: 80px;
+  position: fixed;
+  top: 0;
+  right: 15px;
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
 }
 .btn-nav--container {
-  width: 70px;
-  height: 20px;
+  width: 60px;
+  height: 30px;
   cursor: pointer;
   z-index: 999;
   background: transparent;
@@ -264,7 +239,7 @@ aside .ds-logo {
 }
 .btn-nav {
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: var(--white-color);
   top: 0;
   transition: all ease 0.2s;
@@ -427,97 +402,19 @@ aside .ds-logo {
   width: 100%;
   height: 100vh;
   background-color: var(--dark-grey);
+  background: url("/src/img/png/others/bg_img.png") no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   position: relative;
 }
-.home img {
+.home .bg-color {
   position: absolute;
-  left: 0;
-}
-.home .display {
-  position: relative;
-  overflow: hidden;
-}
-.link {
-  margin-left: 10px;
-  position: relative;
-  font-size: 5em;
-  line-height: 1;
-  display: inline-block;
-  text-transform: uppercase;
-}
-.link--mallki {
-  font-weight: 800;
-  color: var(--light-grey);
-  -webkit-transition: color 0.5s 0.25s;
-  transition: color 0.5s 0.25s;
-  overflow: hidden;
-}
-.link--mallki:hover {
-  -webkit-transition: none;
-  transition: none;
-  color: transparent;
-}
-.link--mallki::before {
-  content: "";
-  width: 60%;
-  height: 10px;
-  margin: 0;
-  background: var(--green-color);
-  position: absolute;
-  left: -1px;
-  top: 50%;
-  -webkit-transform: translate3d(-100%, 0, 0);
-  transform: translate3d(-100%, 0, 0);
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: transform 0.4s;
-  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-}
-.link--mallki:hover::before {
-  -webkit-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
-}
-.link--mallki span {
-  position: absolute;
-  height: 50%;
-  width: 100%;
-  left: 0;
+  background-color: var(--dark-grey);
   top: 0;
-  overflow: hidden;
-}
-.link--mallki span::before {
-  content: attr(data-letters);
-  position: absolute;
-  left: 0;
-  width: 100%;
-  color: #fff;
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-}
-.link--mallki span:nth-child(2) {
-  top: 50%;
-}
-.link--mallki span:first-child::before {
-  top: 0;
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
-}
-.link--mallki span:nth-child(2)::before {
+  right: 0;
   bottom: 0;
-  -webkit-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);
-}
-.link--mallki:hover span::before {
-  -webkit-transition-delay: 0.3s;
-  transition-delay: 0.3s;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-}
-.home .wrapper-txt {
-  position: absolute;
-  margin-top: 170px;
+  left: 0;
+  opacity: 0.95;
 }
 .home h4 {
   font-size: 14px;
@@ -535,15 +432,8 @@ aside .ds-logo {
   bottom: -2px;
   left: -5px;
 }
-.type-writer-text {
-  transform: translate(-10%, -10%);
-  border-right: 1px solid rgba(125, 125, 136, 0.1);
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typewriter 5s steps(40) 1.5s 1 normal both,
-    cursorblink 0.5s infinite;
-}
 .scroll {
+  width: 12px;
   position: absolute;
   left: 0;
   right: 0;
@@ -620,94 +510,22 @@ aside .ds-logo {
 * 9. RESPONSIVE RULES
 */
 @media screen and (min-width: 576px) {
-  .home .murkup-line {
-    margin-top: -4.2%;
-  }
 }
 @media screen and (min-width: 768px) {
 }
 @media only screen and (min-width: 992px) {
-  .tags {
-    left: 90px;
+  /*
+* 3 HEADER
+*/
+  header .ds-logo {
+    left: 40px;
   }
-  h1 {
-    font-size: calc(80px + 1vw);
-  }
-  h2 {
-    font-size: calc(36px + 16 * (100vw - 992px) / 1508);
-  }
-  h3 {
-    font-size: calc(28px + 16 * (100vw - 992px) / 1508);
-    margin-bottom: 20px;
-  }
-  h4 {
-    font-size: calc(24px + 16 * (100vw - 992px) / 1508);
-    font-weight: 300;
-  }
-  h5 {
-    font-size: 20px;
-    font-weight: 400;
-  }
-  h6 {
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: calc(10px + 10 * (100vw - 992px) / 1508);
-  }
-  p {
-    font-size: calc(14px + 2 * (100vw - 992px) / 1508);
-    line-height: 1.8;
-    font-family: "Roboto Mono", monospace;
-    font-weight: 500;
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  aside {
-    width: 80px;
-    left: 0;
-    bottom: 0;
-  }
-  aside .sidebar {
-    width: 80px;
-    height: 100vh;
-    margin: 0 !important;
-    top: 0;
-    left: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-  aside .ds-logo {
-    margin-left: 0;
-  }
-  .txt-menu--content p {
-    transform: rotate(-90deg);
-  }
-  .link {
-    margin-left: 0;
-    font-size: 8em;
-  }
-  .home .wrapper-txt {
-    position: absolute;
-    right: 80px;
-    writing-mode: vertical-lr;
-  }
-  .home h4 {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--white-color);
-    letter-spacing: 0.2em;
-    position: relative;
-  }
-  .home h4::before {
-    content: "";
-    width: 2px;
-    height: 20%;
-    background-color: var(--green-color);
-    position: absolute;
-    top: -5px;
-    left: -2px;
+
+  /**
+ * 3.1 BURGER BUTTON
+ */
+  .ds-nav--content {
+    right: 40px;
   }
 }
 @media screen and (min-width: 1200px) {
