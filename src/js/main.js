@@ -83,41 +83,34 @@ function preloader(immune, background, color) {
 }
 
 function Slide() {
-  var lastUpdate = new Date();
-  window.addEventListener("wheel", function (e) {
-    var thisUpdate = new Date();
-    if (thisUpdate - lastUpdate < 750) {
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    }
-    lastUpdate = thisUpdate;
-
-    var numBlocks = $("[data-slide]").length,
-      $curBlock = $("[data-slide].active"),
-      curBlockNum = $curBlock.data("slide");
-
-    var delta = e.deltaY;
-    if (delta < 0) {
-      //scroll up
-
-      if (curBlockNum != 1) {
-        var $prevBlock = $curBlock.prev(),
-          prevBlockNum = $prevBlock.data("slide");
-
-        $curBlock.removeClass("active prev-slide").addClass("next-slide");
-        $prevBlock.addClass("active").removeClass("prev-slide next-slide");
-      }
-    } else if (delta > 0) {
-      //scroll down
-
-      if (curBlockNum < numBlocks) {
-        var $nextBlock = $curBlock.next(),
-          nextEffect = $nextBlock.data("effect");
-
-        $curBlock.removeClass("active next-slide").addClass("prev-slide");
-        $nextBlock.addClass("active").removeClass("prev-slide next-slide");
-      }
-    }
-  });
+  var slider_capa = new Swiper(".slide-capa-cases", {
+      slidesPerView: 2.2,
+      spaceBetween: 43,
+      loop: !0,
+      speed: 800,
+      centeredSlides: !0,
+      watchSlidesVisibility: !0,
+      watchSlidesProgress: !0,
+      pagination: { el: ".swiper-count", type: "fraction" },
+      navigation: {
+        nextEl: ".control-slide .swiper-btn-next",
+        prevEl: ".swiper-btn-prev",
+      },
+    }),
+    slider_about = new Swiper(".slide-about-cases", {
+      spaceBetween: 40,
+      direction: "vertical",
+      loop: !0,
+      speed: 800,
+      pagination: { el: ".swiper-count", type: "fraction" },
+      navigation: { nextEl: ".swiper-btn-next", prevEl: ".swiper-btn-prev" },
+    }),
+    slide_cases_mobile = new Swiper(".slide-cases-mb", {
+      slidesPerView: 1.3,
+      spaceBetween: 16,
+      speed: 600,
+      loop: !0,
+      pagination: { el: ".swiper-count-mb", type: "fraction" },
+      breakpoints: { 320: { slidesPerView: 1.3 }, 991: { slidesPerView: 2.8 } },
+    });
 }
