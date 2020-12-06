@@ -432,12 +432,19 @@ header .ds-logo {
   height: 100vh;
   z-index: 2;
 }
+.home .display .wrap-title {
+  overflow: hidden;
+}
 .home .display h1 {
   font-weight: 500;
   font-size: 45px;
   color: var(--white-color);
   line-height: 0.9em;
+  transform: translateY(-200px);
+  opacity: 0;
   transition: 0.5s;
+  animation: intoDown 0.8s ease-in-out 2s 1 normal forwards,
+    fadeIn 0.8s ease-in-out 2.3s 1 normal forwards;
 }
 .home .display h1 span {
   position: relative;
@@ -498,6 +505,9 @@ header .ds-logo {
   color: var(--light-grey);
   letter-spacing: 0.2em;
   position: relative;
+  opacity: 0;
+  transition: 0.5s;
+  animation: fadeIn 0.8s ease-in-out 2.8s 1 normal forwards;
 }
 .scroll {
   width: 12px;
@@ -703,22 +713,20 @@ header .ds-logo {
     transform: rotate(360deg);
   }
 }
-@keyframes typewriter {
-  from {
-    width: 0;
+@keyframes intoDown {
+  0% {
+    transform: translateY(-200px);
   }
-
-  to {
-    width: 12.5em;
+  100% {
+    transform: translateY(0px);
   }
 }
-@keyframes cursorblink {
-  from {
-    border-right: 1px solid #dedede;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-
-  to {
-    border-right: 1px solid #666;
+  100% {
+    opacity: 1;
   }
 }
 
