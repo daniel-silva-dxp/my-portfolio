@@ -403,7 +403,7 @@ header .ds-logo {
   height: 100vh;
   background-color: var(--dark-grey);
   background: url("/src/img/png/others/bg_img.png") no-repeat;
-  background-position: center center;
+  background-position: 50% 50%;
   background-attachment: fixed;
   position: relative;
 }
@@ -537,6 +537,12 @@ header .ds-logo {
  */
   .ds-nav--content {
     right: 40px;
+  }
+  /*
+  * 12. LINES PAGE DIVIDER
+  */
+  .lines .line-col {
+    display: inline-block !important;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -681,7 +687,7 @@ header .ds-logo {
 }
 .lines .line-col {
   position: relative;
-  display: inline-block;
+  display: none;
   vertical-align: top;
   width: 20%;
   height: 100vh;
