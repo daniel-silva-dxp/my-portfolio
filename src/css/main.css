@@ -212,6 +212,8 @@ header .ds-logo {
   top: 0;
   left: 15px;
   z-index: 100;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out 3.5s 1 normal forwards;
 }
 
 /**
@@ -227,6 +229,9 @@ header .ds-logo {
   align-items: center;
   justify-content: center;
   z-index: 100;
+  opacity: 0;
+  transition: 0.5s;
+  animation: fadeIn 0.8s ease-in-out 3.5s 1 normal forwards;
 }
 .btn-nav--container {
   width: 60px;
@@ -506,7 +511,6 @@ header .ds-logo {
   letter-spacing: 0.2em;
   position: relative;
   opacity: 0;
-  transition: 0.5s;
   animation: fadeIn 0.8s ease-in-out 2.8s 1 normal forwards;
 }
 .scroll {
@@ -516,6 +520,8 @@ header .ds-logo {
   right: 0;
   margin: 0 auto;
   bottom: 0;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out 3.5s 1 normal forwards;
 }
 /*
 * 5. ABOUT ME
