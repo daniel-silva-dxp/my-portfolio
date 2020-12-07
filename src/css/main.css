@@ -18,7 +18,6 @@
 9. RESPONSIVE RULES
 10. ANIMATIONS
 11. SCROLL BAR
-12. LINES PAGE DIVIDER
 ------------------------------------------------------------------*/
 
 /**
@@ -472,7 +471,9 @@ header .ds-logo {
   font-size: 12px;
   margin-bottom: 10px;
 }
-
+.show-mobile {
+  display: inline-block;
+}
 /*
 * 4. HOME
 */
@@ -612,6 +613,40 @@ header .ds-logo {
   line-height: 0.9em;
   font-weight: 500;
   text-transform: uppercase;
+  transition: 0.5s;
+}
+.about .display h1 span {
+  position: relative;
+  text-transform: uppercase;
+  display: block;
+}
+.about .display h1 span:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 5px);
+  right: 45%;
+  width: 20%;
+  height: 10px;
+  background-color: var(--green-color);
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: 0.5s;
+  z-index: 1;
+}
+.about .display h1:hover span:nth-child(1)::before {
+  transform: scaleX(1);
+}
+.about .display h1 span hide {
+  transition: 0.5s;
+  transition-delay: 1s;
+}
+.about .display h1:hover span hide {
+  transition-delay: 0.2s;
+  color: var(--light-grey);
+  opacity: 0;
+}
+.about .display h1:hover span:nth-child(1) hide {
+  padding-left: 10px;
 }
 .about-me p {
   line-height: 1.4em;
@@ -678,11 +713,7 @@ header .ds-logo {
   transition: all 0.3s;
 }
 .slide-cases-mb .swiper-slide .wrap-case-img {
-  z-index: 900;
   flex: 1;
-}
-.slide-cases-mb .swiper-slide .wrap-case-img img {
-  z-index: 900 !important;
 }
 .slide-cases-mb .swiper-slide .box {
   width: 100%;
@@ -742,7 +773,48 @@ header .ds-logo {
 /*
 * 7. CONTACT
 */
-
+.contact {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--dark-grey);
+  position: relative;
+}
+.contact .container {
+  height: 100vh;
+}
+.contact .display {
+  height: 70vh;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contact .display .wrap-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.contact .display h1 {
+  font-size: 45px;
+  line-height: 0.9em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.contact-me address {
+  padding: 10px 0;
+}
+.contact .contact-me p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.contact-me address a em {
+  color: var(--green-color);
+}
+.copyright {
+  width: 50px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 20px;
+}
 /*
 * 8. PRELOADER
 */
@@ -805,6 +877,9 @@ header .ds-logo {
 @media screen and (min-width: 768px) {
 }
 @media only screen and (min-width: 992px) {
+  .show-mobile {
+    display: none !important;
+  }
   header.title h1 {
     font-size: 40px;
   }
@@ -854,19 +929,38 @@ header .ds-logo {
     font-size: 73px;
   }
   /*
-  * 12. LINES PAGE DIVIDER
+  * 7. CONTACT
   */
-  .lines .line-col {
-    display: inline-block !important;
+  .contact {
+    height: 100vh;
+    padding-bottom: 0;
+  }
+  .contact .display {
+    height: 80vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .contact .display .wrap-title,
+  .contact .display .contact-me {
+    width: auto;
+  }
+  .contact .display h1 {
+    font-size: 73px;
+  }
+  .contact .contact-me {
+    padding: 0 100px;
   }
 }
 @media screen and (min-width: 1200px) {
+  .about .display h1 span:nth-child(1)::before {
+    right: 50%;
+  }
   .cases .slide-cases-mb {
     display: none;
   }
   .area-slide {
     display: block;
-    z-index: 90;
     width: 100%;
     height: 493px;
     margin-top: 76px;
@@ -950,7 +1044,7 @@ header .ds-logo {
   .slide-about-cases .swiper-slide h5 {
     font-size: 12px;
     font-weight: 600;
-    color: var(--grey-color-3);
+    color: var(--light-grey);
   }
   .control-slide {
     margin-top: -40px;
@@ -970,9 +1064,6 @@ header .ds-logo {
   }
   .control-slide .swiper-count {
     display: block;
-  }
-  .contact .display-form {
-    padding-left: 0.5%;
   }
 }
 
@@ -1110,43 +1201,4 @@ header .ds-logo {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--green-color) !important;
-}
-
-/*
-* 12. LINES PAGE DIVIDER
-*/
-.lines {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  font-size: 0;
-  pointer-events: none;
-  z-index: 20;
-}
-.lines.ready {
-  z-index: 10;
-}
-.lines .line-col {
-  position: relative;
-  display: none;
-  vertical-align: top;
-  width: 20%;
-  height: 100vh;
-}
-.lines.finish .line-col:before {
-  height: 100%;
-}
-.lines .line-col:first-child:before {
-  background: 0 0;
-}
-.lines .line-col:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1px;
-  height: 0%;
-  background: rgba(125, 125, 136, 0.05);
 }

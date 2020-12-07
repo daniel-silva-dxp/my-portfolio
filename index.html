@@ -168,13 +168,6 @@
       </p>
     <![endif]-->
     <div>
-      <div class="lines finish ready">
-        <div class="line-col"></div>
-        <div class="line-col"></div>
-        <div class="line-col"></div>
-        <div class="line-col"></div>
-        <div class="line-col"></div>
-      </div>
       <span class="tags top-tags"> &nbsp;&nbsp;&nbsp;&lt;body&gt;</span>
       <span class="tags bottom-tags">
         &nbsp;&nbsp;&nbsp;&lt;/body&gt;<br />
@@ -190,7 +183,19 @@
         style="margin-top: 40px"
       >
         <ul class="main-nav" style="width: 100%; max-width: 600px">
-          <li>
+          <li data-text="Home">
+            <a href="#home" class="link"> Home </a>
+          </li>
+          <li data-text="Sobre">
+            <a href="#about" class="link"> Sobre </a>
+          </li>
+          <li data-text="Cases">
+            <a href="#cases" class="link"> Cases </a>
+          </li>
+          <li data-text="Contato">
+            <a href="#contact" class="link"> Contato </a>
+          </li>
+          <li class="show-mobile">
             <a href="https://wa.me/qr/6MXVTWEZ3CNKK1" class="link">
               <span>
                 <img src="./src/img/svg/icon/whatsapp_icon_white.svg" />
@@ -252,8 +257,8 @@
             <div class="display">
               <div class="wrap-title">
                 <h1>
-                  Daniel <br />
-                  Silva
+                  <span>Dan<hide>iel</hide></span>
+                  <span>Silva</span>
                 </h1>
                 <div class="social-icons">
                   <span class="social-line"></span>
@@ -303,7 +308,7 @@
                       </div>
                     </a>
                   </span>
-                  <span class="social-display">
+                  <span class="social-display show-mobile">
                     <a
                       href="https://wa.me/qr/6MXVTWEZ3CNKK1"
                       target="_blank"
@@ -480,6 +485,104 @@
             <img src="./src/img/svg/btn_next.svg" alt="" />
           </span>
         </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container">
+          <header class="title">
+            <h1>
+              Vamos <br />
+              conversar?
+            </h1>
+            <div class="sublime"></div>
+          </header>
+          <article class="flex-container align-center">
+            <div class="display">
+              <div class="wrap-title">
+                <h1>
+                  Sua próxima <br />
+                  ideia já tem <br />
+                  um dev!
+                </h1>
+              </div>
+              <div class="contact-me">
+                <address>
+                  <a href="mailto:contato@danielsilva-dev.com.br"
+                    >contato@<em>danielsilva-dev</em>.com.br</a
+                  >
+                </address>
+                <p>
+                  <a href="tel:+5511951991612">+55 11 95199-1612</a>
+                </p>
+                <p>sigam-me nas redes sociais</p>
+                <div class="social-icons">
+                  <span class="social-line"></span>
+                  <span class="social-display">
+                    <a
+                      href="https://github.com/daniel-silva-dxp"
+                      target="_blank"
+                      class="social-wrap"
+                    >
+                      <div class="social-icon">
+                        <img src="./src/img/svg/icon/github_icon_white.svg" />
+                      </div>
+                      <div class="social-icon">
+                        <img src="./src/img/svg/icon/github_icon_green.svg" />
+                      </div>
+                    </a>
+                  </span>
+                  <span class="social-display">
+                    <a
+                      href="https://www.instagram.com/daniel.dxp/"
+                      target="_blank"
+                      class="social-wrap"
+                    >
+                      <div class="social-icon">
+                        <img
+                          src="./src/img/svg/icon/instagram_icon_white.svg"
+                        />
+                      </div>
+                      <div class="social-icon">
+                        <img
+                          src="./src/img/svg/icon/instagram_icon_green.svg"
+                        />
+                      </div>
+                    </a>
+                  </span>
+                  <span class="social-display">
+                    <a
+                      href="https://www.linkedin.com/in/daniel-silva-dxp/"
+                      target="_blank"
+                      class="social-wrap"
+                    >
+                      <div class="social-icon">
+                        <img src="./src/img/svg/icon/linkedin_icon_white.svg" />
+                      </div>
+                      <div class="social-icon">
+                        <img src="./src/img/svg/icon/linkedin_icon_green.svg" />
+                      </div>
+                    </a>
+                  </span>
+                  <span class="social-display show-mobile">
+                    <a
+                      href="https://wa.me/qr/6MXVTWEZ3CNKK1"
+                      target="_blank"
+                      class="social-wrap"
+                    >
+                      <div class="social-icon">
+                        <img src="./src/img/svg/icon/whatsapp_icon_white.svg" />
+                      </div>
+                      <div class="social-icon">
+                        <img src="./src/img/svg/icon/whatsapp_icon_green.svg" />
+                      </div>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <img src="./src/img/svg/copyright.svg" class="copyright" />
       </section>
     </main>
     <script src="./src/js/jquery.js"></script>
