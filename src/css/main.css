@@ -6,6 +6,7 @@
     2.1 TYPOGRAPHY
     2.2 SPECIAL CLASSES
     2.3 FLEXBOX CLASSES
+    2.4 SOCIAL ICONS
 3. HEADE
     3.1 BURGER BUTTON
     3.2 FULLSCREEN MENU
@@ -122,7 +123,7 @@ blockquote {
   font-size: 1em;
 }
 p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /**
@@ -182,7 +183,7 @@ header.title {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 80px 15px 20px;
+  padding: 80px 0 20px;
   position: relative;
 }
 header.title h1 {
@@ -231,6 +232,44 @@ header.title div.sublime {
 .align-center--around {
   align-items: center;
   justify-content: space-around;
+}
+
+/*
+* 2.4 SOCIAL ICONS
+*/
+.social-icons {
+  margin-top: 20px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.social-line {
+  width: 80px;
+  height: 1px;
+  margin-right: 15px;
+  background-color: var(--white-color);
+}
+.social-display {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+.social-wrap {
+  display: block;
+  width: 30px;
+  height: 60px;
+  transition: all 0.2s ease-in-out;
+}
+.social-display:hover .social-wrap {
+  margin-top: -30px;
+}
+.social-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /*
@@ -524,7 +563,7 @@ header .ds-logo {
 }
 .home .display h4 {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--light-grey);
   letter-spacing: 0.2em;
@@ -553,6 +592,9 @@ header .ds-logo {
   background-color: var(--dark-grey);
   position: relative;
 }
+.about .container {
+  height: 100vh;
+}
 .about .display {
   height: 70vh;
   flex-direction: column;
@@ -568,40 +610,42 @@ header .ds-logo {
   font-weight: 500;
   text-transform: uppercase;
 }
-.social-icons {
-  margin-top: 20px;
-  height: 30px;
-  display: flex;
-  align-items: center;
+.about-me p {
+  line-height: 1.4em;
+  letter-spacing: 0.1em;
+  text-align: justify;
+  margin-bottom: 20px;
 }
-.social-line {
+.about-me .experience {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.about-me .experience span {
+  font-family: "Roboto Mono";
+  font-weight: 700;
+}
+.about-me .experience span:nth-child(1) {
+  background-color: var(--green-color);
   width: 80px;
-  height: 1px;
-  margin-right: 15px;
-  background-color: var(--white-color);
-}
-.social-display {
-  width: 30px;
-  height: 30px;
-  margin: 0 10px;
-  overflow: hidden;
-}
-.social-wrap {
-  display: block;
-  width: 30px;
-  height: 60px;
-  transition: all 0.2s ease-in-out;
-}
-.social-display:hover .social-wrap {
-  margin-top: -30px;
-}
-.social-icon {
-  width: 30px;
-  height: 30px;
+  height: 80px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 73px;
+  line-height: 60px;
+  margin-right: 5px;
 }
+.about-me .experience span:nth-child(2) {
+  font-size: 34px;
+  line-height: 40px;
+  writing-mode: vertical-lr;
+}
+.about-me .experience span:nth-child(3) {
+  font-size: 30px;
+  line-height: 25px;
+}
+
 /*
 * 6. CASES
 */
@@ -672,9 +716,6 @@ header .ds-logo {
 @media screen and (min-width: 768px) {
 }
 @media only screen and (min-width: 992px) {
-  header.title {
-    padding: 80px 40px 20px;
-  }
   header.title h1 {
     font-size: 40px;
   }
@@ -722,9 +763,6 @@ header .ds-logo {
   }
   .about .display h1 {
     font-size: 73px;
-  }
-  .about .display .about-me p {
-    font-size: 14px;
   }
   /*
   * 12. LINES PAGE DIVIDER
