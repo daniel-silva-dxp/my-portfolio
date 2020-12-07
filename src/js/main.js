@@ -11,6 +11,7 @@
     if (scrollTop >= $("#about").offset().top) {
       $(".about .display h1").addClass("showIn");
       $(".about .display .wrap-title > div").addClass("fadeIn");
+      $(".about .display .wrap-title p").addClass("fadeIn");
       $(".about-me").addClass("fadeIn");
       $(".about .container .title").addClass("delayFadeIn");
     } else {

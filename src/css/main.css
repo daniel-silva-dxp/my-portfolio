@@ -588,19 +588,19 @@ header .ds-logo {
 */
 .about {
   width: 100%;
-  height: 100vh;
+  height: auto;
   padding-bottom: 40px;
   background-color: var(--dark-grey);
   position: relative;
 }
 .about .container {
-  height: 100vh;
+  height: auto;
 }
 .about .container .title {
   opacity: 0;
 }
 .about .display {
-  height: 70vh;
+  height: auto;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -619,6 +619,7 @@ header .ds-logo {
   line-height: 0.9em;
   font-weight: 500;
   text-transform: uppercase;
+  margin-bottom: 20px;
   transform: translateY(-200px);
   opacity: 0;
   transition: 0.5s;
@@ -659,28 +660,26 @@ header .ds-logo {
 .about .display .wrap-title > div {
   opacity: 0;
 }
-.about-me {
+.about .display .wrap-title p {
   opacity: 0;
-}
-.about-me p {
   line-height: 1.4em;
   letter-spacing: 0.1em;
   text-align: justify;
   margin-bottom: 20px;
 }
-.about-me p em {
+.about .display .wrap-title p em {
   color: var(--green-color);
 }
-.about-me .experience {
+.about .display .wrap-title .experience {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
 }
-.about-me .experience span {
+.about .display .wrap-title .experience span {
   font-family: "Roboto Mono";
   font-weight: 700;
 }
-.about-me .experience span:nth-child(1) {
+.about .display .wrap-title .experience span:nth-child(1) {
   background-color: var(--green-color);
   width: 80px;
   height: 80px;
@@ -691,15 +690,19 @@ header .ds-logo {
   line-height: 60px;
   margin-right: 5px;
 }
-.about-me .experience span:nth-child(2) {
+.about .display .wrap-title .experience span:nth-child(2) {
   font-size: 34px;
   line-height: 40px;
   writing-mode: vertical-lr;
 }
-.about-me .experience span:nth-child(3) {
+.about .display .wrap-title .experience span:nth-child(3) {
   font-size: 30px;
   line-height: 25px;
 }
+.about-me {
+  opacity: 0;
+}
+
 .showIn {
   animation: intoDown 0.8s ease-in-out 0.2s 1 normal forwards,
     fadeIn 0.8s ease-in-out 0.5s 1 normal forwards;
@@ -944,6 +947,10 @@ header .ds-logo {
     height: 80vh;
     flex-direction: row;
     align-items: center;
+  }
+  .about .display .wrap-title {
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .about .display .wrap-title,
   .about .display .about-me {
