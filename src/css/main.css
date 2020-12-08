@@ -482,6 +482,7 @@ header .ds-logo {
 
 .home .display {
   height: 100vh;
+  justify-content: center;
 }
 .home .display .wrap-title {
   overflow: hidden;
@@ -561,6 +562,10 @@ header .ds-logo {
 .home .display .photo {
   opacity: 0;
   animation: fadeIn 0.8s ease-in-out 2.8s 1 normal forwards;
+}
+.home .display .photo img {
+  width: 100%;
+  max-width: 320px;
 }
 .scroll {
   width: 12px;
@@ -672,6 +677,10 @@ header .ds-logo {
   /**
   * 4. HOME
   */
+  .home .display {
+    height: 100vh;
+    justify-content: space-between;
+  }
   .home .display h1 {
     font-size: 73px;
   }
