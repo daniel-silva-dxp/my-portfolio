@@ -8,7 +8,8 @@
 
   $(window).scroll(function () {
     var scrollTop = $("html, body").scrollTop();
-    if (scrollTop >= $("#about").offset().top) {
+    console.log(scrollTop, $("#about").offset().top);
+    if (scrollTop >= 718) {
       $(".about .display h1").addClass("showIn");
       $(".about .display .wrap-title > div").addClass("fadeIn");
       $(".about .display .wrap-title p").addClass("fadeIn");
