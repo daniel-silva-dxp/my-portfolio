@@ -503,10 +503,11 @@ header .ds-logo {
   animation-delay: 2s;
 }
 .home .display h1 span:nth-child(2) {
-  animation-delay: 2.6s;
+  color: var(--green-color);
+  animation-delay: 2.5s;
 }
 .home .display h1 span:nth-child(3) {
-  animation-delay: 2.9s;
+  animation-delay: 3s;
 }
 .home .display h1 span::after {
   margin-bottom: 5px;
