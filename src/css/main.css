@@ -614,13 +614,25 @@ header .ds-logo {
   opacity: 0;
   animation: fadeIn 0.8s ease-in-out 2.8s 1 normal forwards;
 }
-.home .display .photo {
+.home .display .wrap-photo {
+  position: relative;
   opacity: 0;
   animation: fadeIn 0.8s ease-in-out 2.8s 1 normal forwards;
 }
-.home .display .photo img {
+.home .display .wrap-photo,
+.home .display .wrap-photo .ds-photo {
   width: 100%;
   max-width: 320px;
+}
+.home .display .wrap-photo img:first-child {
+  position: absolute;
+  top: 10%;
+  left: 0;
+}
+.home .display .wrap-photo img:last-child {
+  position: absolute;
+  bottom: -15%;
+  right: 0;
 }
 .scroll {
   width: 12px;
