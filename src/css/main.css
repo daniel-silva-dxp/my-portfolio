@@ -688,7 +688,41 @@ header .ds-logo {
 .ds-title h1:hover span:first-child hide {
   padding-left: 20px;
 }
-
+.about-me p {
+  text-align: justify;
+  margin-bottom: 20px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+}
+.about-me p em {
+  color: var(--green-color);
+}
+.experience {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+.experience span:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  background-color: var(--green-color);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 73px;
+  font-weight: 700;
+  line-height: 60px;
+}
+.experience span:nth-child(2),
+.experience span:nth-child(3) {
+  font-size: 34px;
+  line-height: 30px;
+}
+.experience span:nth-child(2) {
+  writing-mode: vertical-lr;
+  margin-left: 5px;
+}
 .ds-your--idea {
   display: flex;
   align-items: center;
