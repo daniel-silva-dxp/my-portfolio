@@ -182,14 +182,15 @@ p {
   position: relative;
 }
 header.title {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 80px 0 20px;
+  padding: 20px 0;
   position: relative;
 }
-header.title h1 {
-  font-size: 40px;
+header.title h4 {
+  font-size: 35px;
   text-transform: uppercase;
   font-weight: 500;
   line-height: 0.9em;
@@ -479,7 +480,6 @@ header .ds-logo {
   height: 100vh;
   position: relative;
 }
-
 .home .display {
   height: 100vh;
   justify-content: center;
@@ -528,30 +528,6 @@ header .ds-logo {
 }
 .home .display h1 span:nth-child(3)::after {
   animation-delay: 2.5s;
-}
-@keyframes reveal__block {
-  0% {
-    left: 0;
-    width: 0;
-  }
-  50% {
-    left: 0;
-    width: 100%;
-  }
-  100% {
-    left: 100%;
-    width: 0;
-  }
-}
-
-@keyframes reveal-text {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 .home .display h1 span {
   position: relative;
@@ -651,7 +627,73 @@ header .ds-logo {
 /*
 * 5. ABOUT ME
 */
+.about {
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+.about .about-display {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.ds-title {
+  margin-bottom: 20px;
+}
+.ds-title h1 {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 0.9em;
+  transition: 0.5s;
+  position: relative;
+}
+.ds-title h1 span {
+  position: relative;
+  text-transform: uppercase;
+  display: inline;
+}
+.ds-title h1 span:first-child {
+  color: var(--green-color);
+}
+.ds-title h1 span:first-child::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 5px);
+  right: 0;
+  width: 40%;
+  height: 10px;
+  background-color: var(--green-color);
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: 0.5s;
+  z-index: 1;
+}
+.ds-title h1:hover span:first-child::before {
+  transform: scaleX(1);
+}
+.ds-title h1 span hide {
+  transition: 0.5s;
+  transition-delay: 1s;
+}
+.ds-title h1:hover span hide {
+  transition-delay: 0.2s;
+  color: var(--light-grey);
+  opacity: 0;
+}
+.ds-title h1:hover span:first-child hide {
+  padding-left: 20px;
+}
 
+.ds-your--idea {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 /*
 * 6. CASES
 */
@@ -764,6 +806,20 @@ header .ds-logo {
   /*
   * 5. ABOUT ME
   */
+  .about .about-display {
+    width: 100%;
+    height: 60vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .ds-title,
+  .about-me {
+    width: 50%;
+  }
+  .ds-title h1 {
+    font-size: 73px;
+  }
 
   /*
   * 7. CONTACT
@@ -913,7 +969,29 @@ header .ds-logo {
     opacity: 1;
   }
 }
+@keyframes reveal__block {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
+@keyframes reveal-text {
+  0% {
+    opacity: 0;
+  }
 
+  100% {
+    opacity: 1;
+  }
+}
 /*
 * 11. SCROLL BAR
 */
