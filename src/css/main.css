@@ -482,6 +482,7 @@ header .ds-logo {
 }
 .home .display {
   height: 100vh;
+  margin-bottom: 20px;
   justify-content: center;
 }
 .home .display .wrap-title {
@@ -608,8 +609,8 @@ header .ds-logo {
 }
 .home .display .wrap-photo img:last-child {
   position: absolute;
-  bottom: -15%;
-  right: 0;
+  bottom: -10%;
+  right: -10%;
 }
 .scroll {
   width: 12px;
