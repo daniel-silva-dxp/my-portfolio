@@ -411,7 +411,7 @@ header .ds-logo {
   padding: 6px 15px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   transition: all 0.2s ease 0.3s;
 }
 .float-nav ul li::before {
@@ -421,8 +421,7 @@ header .ds-logo {
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "La Belle Aurore", cursive;
-  font-size: 8em;
-  font-weight: 700;
+  font-size: 9em;
   color: var(--dark-grey);
   pointer-events: none;
   opacity: 0;
@@ -434,19 +433,27 @@ header .ds-logo {
   opacity: 0.2;
   letter-spacing: 0;
 }
+.float-nav ul li span {
+  font-size: 40px;
+  writing-mode: vertical-rl;
+  font-weight: 700;
+  margin-right: 10px;
+}
 .float-nav ul li a {
-  font-size: 24px;
-  position: relative;
-  font-weight: 400;
-  letter-spacing: 0.2em;
+  color: var(--white-color);
+  font-size: 45px;
   text-transform: uppercase;
+  position: relative;
+  font-weight: 700;
+  padding: 5px;
+  letter-spacing: 0.2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   transition: all 0.2s ease 0.2s;
 }
 .float-nav ul li a:hover {
-  transform: scale(1.4);
+  transform: scale(1.2);
   opacity: 1;
 }
 .float-nav ul li a span {
