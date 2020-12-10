@@ -188,8 +188,6 @@ header.title {
   justify-content: flex-end;
   padding: 20px 0;
   position: relative;
-  transform: translateX(260px);
-  transform-origin: right;
   opacity: 0;
 }
 header.title h4 {
@@ -1300,7 +1298,7 @@ span.scroll-display span {
   }
 }
 .fade-in {
-  animation: fade-in 0.8s ease-in-out 1s 1 normal forwards;
+  animation: fade-in 0.8s ease-in-out 0.8s 1 normal forwards;
 }
 @keyframes reveal-block {
   0% {
