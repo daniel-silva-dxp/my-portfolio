@@ -1,12 +1,5 @@
-<svg id="scroll_down" xmlns="http://www.w3.org/2000/svg" width="13" height="136.195" viewBox="0 0 13 136.195">
-  <g id="Grupo_93" data-name="Grupo 93" transform="translate(-949 -828)">
-    <text id="scroll_down-2" data-name="scroll down" transform="translate(952 828) rotate(90)" fill="#1d1d1d" font-size="10" font-family="RobotoMono-Medium, Roboto Mono" font-weight="500" letter-spacing="0.12em"><tspan x="0" y="0">scroll down</tspan></text>
-  </g>
-  <g id="arrow_prv" transform="translate(2.061 136.195) rotate(-90)">
-    <g id="Grupo_60" data-name="Grupo 60" transform="translate(0 8.806) rotate(-90)">
-      <rect id="Retângulo_79" data-name="Retângulo 79" width="1.314" height="5.852" rx="0.657" transform="translate(4.138 0) rotate(45)" fill="#1d1d1d"/>
-      <rect id="Retângulo_80" data-name="Retângulo 80" width="1.314" height="5.852" rx="0.657" transform="translate(3.739 0.929) rotate(-45)" fill="#1d1d1d"/>
-      <rect id="Retângulo_81" data-name="Retângulo 81" width="1.314" height="49.343" rx="0.657" transform="translate(3.739 0.657)" fill="#1d1d1d"/>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="13" height="87" viewBox="0 0 13 87">
+  <g id="Grupo_125" data-name="Grupo 125" transform="translate(-949 -828)">
+    <text id="scroll_down" data-name="scroll down" transform="translate(952 828) rotate(90)" fill="#1d1d1d" font-size="10" font-family="RobotoMono-Medium, Roboto Mono" font-weight="500" letter-spacing="0.2em"><tspan x="0" y="0">SCROLL DOWN</tspan></text>
   </g>
 </svg>
