@@ -632,7 +632,7 @@ header .ds-logo {
   width: 100%;
   height: 100vh;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
   position: relative;
 }
 .about .about-display {
