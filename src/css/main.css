@@ -732,7 +732,91 @@ header .ds-logo {
 /*
 * 6. CASES
 */
-
+.cases {
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+.cases {
+  height: table;
+  padding: 20px 0;
+}
+.cases .slide-cases-mb {
+  width: 100%;
+  height: 493px;
+  overflow: hidden;
+}
+.slide-cases-mb .swiper-slide {
+  justify-content: center;
+  opacity: 0.3;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.slide-cases-mb .swiper-slide .wrap-case-img {
+  z-index: 900;
+  flex: 1;
+}
+.slide-cases-mb .swiper-slide .wrap-case-img img {
+  z-index: 900 !important;
+}
+.slide-cases-mb .swiper-slide .box {
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.slide-cases-mb .swiper-slide .box h1 {
+  font-size: 35px;
+}
+.slide-cases-mb .swiper-slide .box h4 {
+  font-size: 28px;
+  color: var(--green-color);
+}
+.slide-cases-mb .swiper-slide .box p {
+  padding: 5px 0;
+  font-size: 12px;
+}
+.slide-cases-mb .swiper-slide .box h5 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--light-grey);
+}
+.slide-cases-mb .swiper-slide.swiper-slide-active {
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.area-slide {
+  display: none;
+}
+.control-slide {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.control-slide .swiper-cout-content {
+  width: 80px;
+  padding: 5px;
+  text-align: center;
+  font-family: "Roboto Mono";
+  font-size: 14px;
+  font-weight: 600;
+}
+.control-slide .swiper-btn-next,
+.control-slide .swiper-btn-prev {
+  display: none;
+}
+.control-slide .swiper-count {
+  display: none;
+}
 /*
 * 7. CONTACT
 */
@@ -900,9 +984,136 @@ header .ds-logo {
   .lines:before {
     width: 380px;
   }
+  .cases .slide-cases-mb {
+    display: none;
+  }
+  .area-slide {
+    display: block;
+    z-index: 90;
+    width: 100%;
+    height: 493px;
+    margin-top: 76px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .area-slide .slide-capa-cases {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 90%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .area-slide .slide-capa-cases .swiper-slide {
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .area-slide .slide-capa-cases .swiper-slide.swiper-slide-thumb-active,
+  .area-slide .slide-capa-cases .swiper-slide.swiper-slide-active,
+  .area-slide .slide-capa-cases .swiper-slide.swiper-slide-prev {
+    opacity: 1;
+  }
+  .area-slide .slide-capa-cases .swiper-slide.swiper-slide-next {
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .area-slide .slide-about-cases {
+    width: 330px;
+    height: 400px;
+    margin-right: 20px;
+  }
+  .area-slide .slide-about-cases .swiper-slide {
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .area-slide .slide-about-cases .swiper-slide.swiper-slide-active {
+    opacity: 1;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .slide-capa-cases .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slide-capa-cases .swiper-slide .box {
+    width: 100%;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .slide-about-cases .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 10px 10px;
+  }
+  .slide-about-cases .swiper-slide h1 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  .slide-about-cases .swiper-slide h4 {
+    font-size: 28px;
+    line-height: 28px;
+    color: var(--green-color);
+  }
+  .slide-about-cases .swiper-slide p {
+    padding: 8px 0;
+    font-size: 14px;
+  }
+  .slide-about-cases .swiper-slide h5 {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--light-grey);
+  }
+  .control-slide {
+    margin-top: -40px;
+  }
+  .control-slide .swiper-btn-prev,
+  .control-slide .swiper-btn-next {
+    z-index: 120;
+    width: 40px;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .control-slide .swiper-count-mb {
+    display: none;
+  }
+  .control-slide .swiper-count {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 1364px) {
+  .area-slide .slide-about-cases {
+    margin-right: 50px;
+  }
+  .area-slide .slide-about-cases {
+    margin-right: -60px;
+  }
+  .slide-about-cases .swiper-slide {
+    padding: 40px 10px 10px;
+  }
+  .slide-about-cases .swiper-slide h1 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+  .slide-about-cases .swiper-slide h4 {
+    font-size: 36px;
+    line-height: 36px;
+  }
 }
 
 @media screen and (min-width: 1600px) {
