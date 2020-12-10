@@ -10,6 +10,7 @@
   $(window).scroll(function () {
     var scrollTop = $("html, body").scrollTop();
     console.log(scrollTop, $("#about").offset().top);
+    animate(scrollTop);
     if (scrollTop >= 718) {
       $(".about .display h1").addClass("showIn");
       $(".about .display .wrap-title > div").addClass("fadeIn");
@@ -164,4 +165,15 @@ function scrollAnimate() {
     $(this).addClass("scroll-down");
     $(this).removeClass("scroll-top");
   });
+}
+
+function animate(px) {
+  if (px >= 422) {
+    $(".wrap-title h4").addClass("fade-left--in");
+    $(".wrap-title .sublime").addClass("rightin-sublime");
+  }
+  if (px >= 523) {
+    $(".ds-title").addClass("fade-in");
+    $(".about-me").addClass("fade-in");
+  }
 }
