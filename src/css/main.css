@@ -632,7 +632,6 @@ header .ds-logo {
   width: 100%;
   height: 100vh;
   padding-top: 80px;
-  padding-bottom: 20px;
   position: relative;
 }
 .about .about-display {
@@ -780,7 +779,7 @@ header .ds-logo {
 }
 .slide-cases-mb .swiper-slide .box p {
   padding: 5px 0;
-  font-size: 12px;
+  font-size: 14px;
 }
 .slide-cases-mb .swiper-slide .box h5 {
   font-size: 12px;
