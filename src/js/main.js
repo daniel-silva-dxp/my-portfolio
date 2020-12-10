@@ -169,11 +169,15 @@ function scrollAnimate() {
 
 function animate(px) {
   if (px >= 422) {
-    $(".wrap-title h4").addClass("fade-left--in");
-    $(".wrap-title .sublime").addClass("rightin-sublime");
+    $(".about .wrap-title h4").addClass("fade-left--in");
+    $(".about .wrap-title .sublime").addClass("rightin-sublime");
   }
   if (px >= 523) {
     $(".ds-title").addClass("fade-in");
     $(".about-me").addClass("fade-in");
+  }
+  if (px >= 1055) {
+    $(".cases .wrap-title h4").addClass("fade-left--in");
+    $(".cases .wrap-title .sublime").addClass("rightin-sublime");
   }
 }
