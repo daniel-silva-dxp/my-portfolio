@@ -620,7 +620,33 @@ header .ds-logo {
   margin: 0 auto;
   bottom: 0;
   opacity: 0;
+  z-index: 7;
   animation: fadeIn 0.8s ease-in-out 3.5s 1 normal forwards;
+}
+.scroll a {
+  display: block;
+  height: 140px;
+  position: relative;
+  overflow: hidden;
+}
+.scroll a span.scroll-display {
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  transition: all 0.15s ease-in-out;
+}
+span.scroll-display span {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll a:hover span.scroll-display {
+  bottom: -140px;
 }
 .show-display {
   display: none;
