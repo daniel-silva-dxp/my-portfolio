@@ -5,6 +5,7 @@
   preloader(true, "black", "green");
   slide();
   fullscreenLinks();
+  scrollAnimate();
 
   $(window).scroll(function () {
     var scrollTop = $("html, body").scrollTop();
@@ -149,5 +150,18 @@ function fullscreenLinks() {
         }
       );
     }
+  });
+}
+/*------------------
+Scroll Icon animate
+-------------------*/
+function scrollAnimate() {
+  $(".scroll a").mouseover(function (event) {
+    $(this).addClass("scroll-top");
+    $(this).removeClass("scroll-down");
+  });
+  $(".scroll a").mouseout(function (event) {
+    $(this).addClass("scroll-down");
+    $(this).removeClass("scroll-top");
   });
 }

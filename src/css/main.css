@@ -629,16 +629,24 @@ header .ds-logo {
   position: relative;
   overflow: hidden;
 }
-.scroll a::before {
+.scroll-top::before {
+  transform-origin: bottom;
+  animation: reveal-block-up 0.5s ease-in-out 1 normal forwards;
+}
+.scroll-top::before,
+.scroll-down::after {
   content: "";
   width: 100%;
   height: 100%;
-  transform-origin: bottom;
   transform: scaleY(0);
   top: 0;
-  background-color: #6cff6c;
+  background-color: var(--green-color);
   position: absolute;
   z-index: 8;
+}
+.scroll-down::after {
+  transform-origin: top;
+  animation: reveal-block-down 0.6s ease-in-out 1 normal forwards;
 }
 .scroll a span.scroll-display {
   height: 280px;
@@ -648,7 +656,7 @@ header .ds-logo {
   justify-content: center;
   position: absolute;
   bottom: 0;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 span.scroll-display span {
   height: 140px;
@@ -658,9 +666,6 @@ span.scroll-display span {
 }
 .scroll a:hover span.scroll-display {
   bottom: -140px;
-}
-.scroll a:hover::before {
-  animation: reveal-block-up 0.5s ease-in-out 1 normal forwards;
 }
 .show-display {
   display: none;
@@ -1280,6 +1285,20 @@ span.scroll-display span {
   }
   100% {
     top: -140px;
+    transform: scaleY(0);
+  }
+}
+@keyframes reveal-block-down {
+  0% {
+    top: 0;
+    transform: scaleY(0);
+  }
+  50% {
+    top: 0;
+    transform: scaleY(1);
+  }
+  100% {
+    top: 140px;
     transform: scaleY(0);
   }
 }
